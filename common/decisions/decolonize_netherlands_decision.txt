@@ -1,0 +1,171 @@
+netherlands_decolonize = {
+	is_shown = {
+		c:NET = ROOT
+		game_date < 1836.1.2
+	}
+
+	possible = {
+		OR = {
+			NOT = { has_law = law_type:law_no_colonial_affairs }
+			NOT = { has_law = law_type:law_slavery_banned }
+		}
+	}
+
+	when_taken = {
+		if = {
+			limit = { 
+				NOT = { has_law = law_type:law_no_colonial_affairs }
+			}
+			activate_law = law_type:law_no_colonial_affairs
+		}
+		if = {
+			limit = {
+				NOT = { has_law = law_type:law_slavery_banned }
+			}
+			activate_law = law_type:law_slavery_banned
+		}
+
+		remove_diplomatic_pact = {
+			country = c:LUX
+			type = grant_own_market
+		}
+		remove_diplomatic_pact = {
+			country = c:LUX
+			type = personal_union
+		}
+
+		create_country = {
+			tag = AMZ
+			origin = ROOT
+			state = s:STATE_GUAYANA.region_state:NET
+		}
+		if = {
+			limit = {
+				exists = c:AMZ
+			}
+			s:STATE_GUAYANA = {
+				set_owner_of_provinces = {
+					country = c:AMZ
+					provinces = { xF17CCC xA08011 xDBF640 x50D012 x29D96A xE18467 xDB86CE xE8D6CB xE6BBD3 xA9777B xF6408F x063557 xA299AE x210190 x771D68 xD8362B xF1E3BF x4B427A x0753FE x19A3D9 xC2E46E x58ABBF x3EC2E7 xB6F7B4 x43E136 x102B13 xCD1A5A x822364 x27E268 }
+				}
+			}
+		}
+		else = {
+			create_country = {
+				tag = AMZ
+				origin = ROOT
+				state = s:STATE_WEST_INDIES.region_state:DEN
+			}
+		}
+		s:STATE_GHANA = {
+			set_owner_of_provinces = {
+				country = c:ASH
+				provinces = { x6C8064 }
+			}
+		}
+		remove_diplomatic_pact = {
+			country = c:DEI
+			type = dominion
+		}
+		create_country = {
+			tag = IDN
+			origin = c:DEI
+			state = s:STATE_WEST_JAVA.region_state:DEI
+			on_created = {
+				activate_law = law_type:law_parliamentary_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_total_separation
+				activate_law = law_type:law_appointed_bureaucrats
+
+				activate_law = law_type:law_agrarianism
+				activate_law = law_type:law_tenant_farmers
+				activate_law = law_type:law_colonial_resettlement
+
+				activate_law = law_type:law_slavery_banned
+
+				c:DEI = {
+					remove_diplomatic_pact = {
+						country = c:JMB
+						type = puppet
+					}
+					remove_diplomatic_pact = {
+						country = c:YOG
+						type = puppet
+					}
+					remove_diplomatic_pact = {
+						country = c:SRK
+						type = puppet
+					}
+					remove_diplomatic_pact = {
+						country = c:SMB
+						type = puppet
+					}
+					remove_diplomatic_pact = {
+						country = c:PON
+						type = puppet
+					}
+					remove_diplomatic_pact = {
+						country = c:BNJ
+						type = puppet
+					}
+					remove_diplomatic_pact = {
+						country = c:TID
+						type = puppet
+					}
+				}
+
+				c:IDN = {
+					annex = c:JMB
+					annex = c:YOG
+					annex = c:SRK
+					annex = c:SMB
+					annex = c:PON
+					annex = c:BNJ
+					annex = c:TID
+					annex = c:DEI
+				}
+				s:STATE_ACEH = {
+					add_claim = c:IDN
+				}
+				s:STATE_NORTH_SUMATRA = {
+					add_claim = c:IDN
+				}
+				s:STATE_SOUTH_SUMATRA = {
+					add_claim = c:IDN
+				}
+				s:STATE_WEST_JAVA = {
+					add_claim = c:IDN
+				}
+				s:STATE_CENTRAL_JAVA = {
+					add_claim = c:IDN
+				}
+				s:STATE_EAST_JAVA = {
+					add_claim = c:IDN
+				}
+				s:STATE_SUNDA_ISLANDS = {
+					add_claim = c:IDN
+				}
+				s:STATE_CELEBES = {
+					add_claim = c:IDN
+				}
+				s:STATE_MOLUCCAS = {
+					add_claim = c:IDN
+				}
+				s:STATE_WESTERN_NEW_GUINEA = {
+					add_claim = c:IDN
+				}
+				s:STATE_WEST_BORNEO = {
+					add_claim = c:IDN
+				}
+				s:STATE_EAST_BORNEO = {
+					add_claim = c:IDN
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 0
+	}
+}

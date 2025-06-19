@@ -1,0 +1,112 @@
+portugal_decolonize = {
+	is_shown = {
+		c:POR = ROOT
+		game_date < 1836.1.2
+	}
+
+	possible = {
+		OR = {
+			NOT = { has_law = law_type:law_no_colonial_affairs }
+			NOT = { has_law = law_type:law_slavery_banned }
+		}
+	}
+
+	when_taken = {
+		if = {
+			limit = { 
+				NOT = { has_law = law_type:law_no_colonial_affairs }
+			}
+			activate_law = law_type:law_no_colonial_affairs
+		}
+		if = {
+			limit = {
+				NOT = { has_law = law_type:law_slavery_banned }
+			}
+			activate_law = law_type:law_slavery_banned
+		}
+
+		s:STATE_GAMBIA = {
+			set_owner_of_provinces = {
+				country = c:KBU
+				provinces = { x7486F1 x9933B7 x04FDE5 x146701 }
+			}
+		}
+		s:STATE_NORTH_ANGOLA = {
+			set_owner_of_provinces = {
+				country = c:KSN
+				provinces = { xC02050 xDAAC09 x78C387 x6FD2F7 xC93845 xCFA0E7 xCE457C x82C47B x15BBB9 xF00017 x087B9D xADC6D4 xBF65DC x32E90E x4764A5 xD30F2F xCFF013 xC7F9BD x491B8B x8F94AF xDAA27C x8C112B xA71792 }
+			}
+		}
+		s:STATE_SOUTH_ANGOLA = {
+			set_owner_of_provinces = {
+				country = c:OVM
+				provinces = { x57F834 x07C3F2 xD6C96D x50C030 xD2F7C4 xFC5809 x8F380E xE10AC9 x1B547C x8060F0 x85CF92 xCB3588 xD891B2 x068F41 xA95021 x7CB2EC x68FADF x02B371 x0446CA }
+			}
+		}
+		s:STATE_MOCAMBIQUE = {
+			set_owner_of_provinces = {
+				country = c:MRV
+				provinces = { x3D00BC xC270F8 xA5450D xB230F4 x2F77FB xE412DB xA32AAD x005594 x876584 x9FE0B0 xA8A6DE x1D7D03 xBE355B x49AFAC xFE0A11 x11E090 }
+			}
+		}
+		s:STATE_ZAMBEZIA = {
+			set_owner_of_provinces = {
+				country = c:MNC
+				provinces = { x667225 x217D32 x277F44 x3F30D0 x71C576 x6EDE1E x30B0D0 x27EEEF xF0ABE1 x8D331C xCA8CD6 x65E3CE x598E16 x94943F x90E090 x0B2E9A xD7451D x19FC5A }
+			}
+		}
+		s:STATE_LOURENCO_MARQUES = {
+			set_owner_of_provinces = {
+				country = c:GZA
+				provinces = { x3083D0 x54CDC5 x361897 xB6C38B x31033A xC41403 x51ECCC x8DC2A9 xE4494C x040DB6 x7D5F16 }
+			}
+		}
+		s:STATE_BOMBAY = {
+			set_owner_of_provinces = {
+				country = c:BIC
+				provinces = { x51F0A0 }
+			}
+		}
+		s:STATE_GUJARAT = {
+			set_owner_of_provinces = {
+				country = c:BIC
+				provinces = { xF01160 }
+			}
+			set_owner_of_provinces = {
+				country = c:JUN
+				provinces = { x0C6CB1 }
+			}
+		}
+		s:STATE_GUANGDONG = {
+			set_owner_of_provinces = {
+				country = c:CHI
+				provinces = { xB031E0 }
+			}
+			# TODO: Need to annul Luso-Chinese Agreement, no idea how
+		}
+		s:STATE_SUNDA_ISLANDS = {
+			if = {
+				limit = {
+					exists = c:DEI
+				}
+				set_owner_of_provinces = {
+					country = c:DEI
+					provinces = { x4EE71E x3CCE91 x7F4592 x908090 x929145 x7D205E }
+				}
+			}
+			else_if = {
+				limit = {
+					exists = c:IDN
+				}
+				set_owner_of_provinces = {
+					country = c:IDN
+					provinces = { x4EE71E x3CCE91 x7F4592 x908090 x929145 x7D205E }
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 0
+	}
+}

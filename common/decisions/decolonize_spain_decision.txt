@@ -1,0 +1,60 @@
+spain_decolonize = {
+	is_shown = {
+		c:SPA = ROOT
+		game_date < 1836.1.2
+	}
+
+	possible = {
+		OR = {
+			NOT = { has_law = law_type:law_no_colonial_affairs }
+			NOT = { has_law = law_type:law_slavery_banned }
+		}
+	}
+
+	when_taken = {
+		if = {
+			limit = { 
+				NOT = { has_law = law_type:law_no_colonial_affairs }
+			}
+			activate_law = law_type:law_no_colonial_affairs
+		}
+		if = {
+			limit = {
+				NOT = { has_law = law_type:law_slavery_banned }
+			}
+			activate_law = law_type:law_slavery_banned
+		}
+
+		s:STATE_AL_RIF = {
+			set_owner_of_provinces = {
+				country = c:MOR
+				provinces = { xCA9F75 xA0B0C0 }
+			}
+		}
+		s:STATE_SOUTH_CAMEROON = {
+			set_owner_of_provinces = {
+				country = c:DLA
+				provinces = { x902089 }
+			}
+		}
+		create_country = {
+			tag = PCO
+			origin = ROOT
+			state = s:STATE_PUERTO_RICO.region_state:SPA
+		}
+
+		remove_diplomatic_pact = {
+			country = c:CUB
+			type = colony
+		}
+		remove_diplomatic_pact = {
+			country = c:PHI
+			type = colony
+		}
+	}
+
+	ai_chance = {
+		base = 0
+	}
+}
+

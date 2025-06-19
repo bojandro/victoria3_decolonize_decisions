@@ -1,0 +1,120 @@
+france_decolonize = {
+	is_shown = {
+		c:FRA = ROOT
+		game_date < 1836.1.2
+	}
+
+	possible = {
+		OR = {
+			NOT = { has_law = law_type:law_no_colonial_affairs }
+			NOT = { has_law = law_type:law_slavery_banned }
+		}
+	}
+
+	when_taken = {
+		if = {
+			limit = { 
+				NOT = { has_law = law_type:law_no_colonial_affairs }
+			}
+			activate_law = law_type:law_no_colonial_affairs
+		}
+		if = {
+			limit = {
+				NOT = { has_law = law_type:law_slavery_banned }
+			}
+			activate_law = law_type:law_slavery_banned
+		}
+
+		s:STATE_ORAN = {
+			set_owner_of_provinces = {
+				country = c:MAS
+				provinces = { xB735DB xDFB0C0 }
+			}
+		}
+		s:STATE_ALGIERS = {
+			set_owner_of_provinces = {
+				country = c:MAS
+				provinces = { x713C2F }
+			}
+		}
+		s:STATE_CONSTANTINE = {
+			set_owner_of_provinces = {
+				country = c:AIT
+				provinces = { x8090DF }
+			}
+			set_owner_of_provinces = {
+				country = c:CON
+				provinces = { x0050A0 }
+			}
+		}
+		if = {
+			limit = {
+				exists = c:WIN
+			}
+			s:STATE_WEST_INDIES = {
+				set_owner_of_provinces = {
+					country = c:WIN
+					provinces = { x33895B x9C52CA }
+				}
+			}
+		}
+		else = {
+			create_country = {
+				tag = WIN
+				origin = ROOT
+				state = s:STATE_WEST_INDIES.region_state:FRA
+			}
+		}
+		if = {
+			limit = {
+				exists = c:AMZ
+			}
+			s:STATE_GUAYANA = {
+				set_owner_of_provinces = {
+					country = c:AMZ
+					provinces = { x80C050 x705AB9 x439BC2 x8C64ED x61BE2C xC591AC x049E29 x20DD27 xA082D3 xF23696 xF20136 x148FB5 x9F0090 }
+				}
+			}
+		}
+		else = {
+			create_country = {
+				tag = AMZ
+				origin = ROOT
+				state = s:STATE_GUAYANA.region_state:FRA
+			}
+		}
+		s:STATE_INDIAN_OCEAN_TERRITORY = {
+			set_owner_of_provinces = {
+				country = c:MAD
+				provinces = { xD690E0 }
+			}
+		}
+		s:STATE_SENEGAL = {
+			set_owner_of_provinces = {
+				country = c:JLF
+				provinces = { xEF30C0 x339E4C xA80844 x267B18 x329831 x3A5023 }
+			}
+		}
+		s:STATE_IVORY_COAST = {
+			set_owner_of_provinces = {
+				country = c:AYI
+				provinces = { xA0BFCF }
+			}
+		}
+		s:STATE_MADRAS = {
+			set_owner_of_provinces = {
+				country = c:BIC
+				provinces = { xABADB1 }
+			}
+		}
+
+		remove_diplomatic_pact = {
+			country = c:PLY
+			type = protectorate
+		}
+	}
+
+	ai_chance = {
+		base = 0
+	}
+}
