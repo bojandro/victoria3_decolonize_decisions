@@ -1,0 +1,412 @@
+britain_decolonize = {
+	is_shown = {
+		c:GBR = ROOT
+		game_date < 1836.1.2
+	}
+
+	possible = {
+		OR = {
+			NOT = { has_law = law_type:law_no_colonial_affairs }
+			NOT = { has_law = law_type:law_slavery_banned }
+		}
+	}
+
+	when_taken = {
+		if = {
+			limit = { 
+				NOT = { has_law = law_type:law_no_colonial_affairs }
+			}
+			activate_law = law_type:law_no_colonial_affairs
+		}
+		if = {
+			limit = {
+				NOT = { has_law = law_type:law_slavery_banned }
+			}
+			activate_law = law_type:law_slavery_banned
+		}
+
+		# Ionian Islands
+		remove_diplomatic_pact = {
+			country = c:GBR
+			type = protectorate
+		}
+		c:GRE = {
+			annex = c:ION
+		}
+		set_variable = ionian_islands_var
+
+		# Australia and New Zealand
+		remove_diplomatic_pact = {
+			country = c:NSW
+			type = colony
+		}
+		remove_diplomatic_pact = {
+			country = c:SAS
+			type = colony
+		}
+		remove_diplomatic_pact = {
+			country = c:WAS
+			type = colony
+		}
+		remove_diplomatic_pact = {
+			country = c:TAS
+			type = colony
+		}
+		remove_diplomatic_pact = {
+			country = c:KAU
+			type = protectorate
+		}
+		remove_diplomatic_pact = {
+			country = c:UNT
+			type = protectorate
+		}
+		create_country = {
+			tag = AST
+			origin = c:NSW
+			province = p:xFDFB3F
+			on_created = {
+				activate_law = law_type:law_parliamentary_republic
+				activate_law = law_type:law_universal_suffrage
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_total_separation
+				activate_law = law_type:law_elected_bureaucrats
+				activate_law = law_type:law_national_militia
+
+
+				activate_law = law_type:law_public_schools
+
+				set_relations = { country = c:GBR value = 50 }
+			}
+		}
+		c:AST = {
+			annex = c:KAU
+			annex = c:NSW
+			annex = c:SAS
+			annex = c:TAS
+			annex = c:WAS
+		}
+		create_country = {
+			tag = NZL
+			origin = c:NTO
+			province = p:x1000F0
+			on_created = {
+				activate_law = law_type:law_parliamentary_republic
+				activate_law = law_type:law_universal_suffrage
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_total_separation
+				activate_law = law_type:law_elected_bureaucrats
+				activate_law = law_type:law_national_militia
+
+				activate_law = law_type:law_interventionism
+				activate_law = law_type:law_mercantilism
+				activate_law = law_type:law_per_capita_based_taxation
+				activate_law = law_type:law_homesteading
+				activate_law = law_type:law_frontier_colonization
+				activate_law = law_type:law_public_schools
+
+				activate_law = law_type:law_no_migration_controls
+
+				set_relations = { country = c:GBR value = 50 }
+				set_relations = { country = c:AST value = 50 }
+			}
+		}
+		c:NZL = {
+			annex = c:UNT
+		}
+		s:STATE_NORTH_ISLAND = {
+			set_owner_of_provinces = {
+				country = c:NZL
+				provinces = { x3BCC0A xEBB583 x1080F0 x59DF28 xD0B89C x9000F0 x91D53E x810EEB xCCD9EE x9080F0 x160E3F xC4FF1C }
+			}
+		}
+		s:STATE_SOUTH_ISLAND = {
+			add_claim = c:NZL
+			remove_claim = c:AST
+		}
+		
+		remove_diplomatic_pact = {
+			country = c:SAF
+			type = colony
+		}
+
+		# India
+		s:STATE_TENASSERIM = {
+			set_owner_of_provinces = {
+				country = c:BUR
+				provinces = { x9381F1 xB36203 x94B7B9 x3911C1 xFE3639 xD0EF60 x1BB979 x169A4D x9F6BAC x958E99 x59E0CA x3F4145 }
+			}
+		}
+		remove_diplomatic_pact = {
+			country = c:BIC
+			type = chartered_company
+		}
+		c:BIC = {
+			every_subject_or_below = {
+				c:BIC = {
+					annex = prev
+				}
+			}
+		}
+		create_country = {
+			tag = BHT
+			origin = c:BIC
+			province = p:xE0EFA0
+			on_created = {
+				activate_law = law_type:law_parliamentary_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_appointed_bureaucrats
+
+				activate_law = law_type:law_interventionism
+				activate_law = law_type:law_per_capita_based_taxation
+				activate_law = law_type:law_frontier_colonization
+				activate_law = law_type:law_public_schools
+
+				activate_law = law_type:law_slavery_banned
+
+				set_relations = { country = c:GBR value = 50 }
+			}
+		}
+		c:BHT = {
+			annex = c:BIC
+		}
+
+		remove_diplomatic_pact = {
+			country = c:BCE
+			type = colony
+		}
+		s:STATE_CEYLON = {
+			set_owner_of_provinces = {
+				country = c:CEY
+				provinces = { x5B5C22 }
+			}
+		}
+
+		# Canada
+		remove_diplomatic_pact = {
+			country = c:HBC
+			type = chartered_company
+		}
+		remove_diplomatic_pact = {
+			country = c:NBS
+			type = colony
+		}
+		remove_diplomatic_pact = {
+			country = c:NVS
+			type = colony
+		}
+		remove_diplomatic_pact = {
+			country = c:ONT
+			type = colony
+		}
+		remove_diplomatic_pact = {
+			country = c:ORG
+			type = colony
+		}
+		remove_diplomatic_pact = {
+			country = c:QUE
+			type = colony
+		}
+		create_country = {
+			tag = CAN
+			origin = c:ONT
+			province = p:xB000C0
+			on_created = {
+				activate_law = law_type:law_parliamentary_republic
+				activate_law = law_type:law_universal_suffrage
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_total_separation
+				activate_law = law_type:law_elected_bureaucrats
+				activate_law = law_type:law_national_militia
+
+				activate_law = law_type:law_frontier_colonization
+
+				activate_law = law_type:law_public_schools
+
+				set_relations = { country = c:GBR value = 50 }
+				set_relations = { country = c:USA value = 50 }
+			}
+		}
+		c:CAN = {
+			annex = c:HBC
+			annex = c:NBS
+			annex = c:NVS
+			annex = c:ONT
+			annex = c:ORG
+			annex = c:QUE
+		}
+		s:STATE_NEWFOUNDLAND = {
+			set_owner_of_provinces = {
+				country = c:CAN
+				provinces = { x74E14D x8D790B xA148A8 x8588BF x818D9D x563A89 x087678 xD1D79F xD6143F xA82803 x1FA5AC x68F55E xF7CF7E x326D52 xCB412F xDE7BE8 xDE7D17 xBACEF7 x0C0CCC x79AB95 x798C8E x10A000 x8C6B34 xC6E552 xEB2540 x37D0BC x48F357 x7FA89F x24AD62 x2D3204 xEE4F4F x0DB516 x7C0D56 x23500D x4BCBC3 x5F3317 x7EE516 x2CCABA xE0CBAB xAD6639 x021E3A xDDA6FC x8B0AB0 x38B630 x7046BA xDCDD4E xB378BB x1E71F4 x908155 xD9C831 x7C4AAC x032662 x03D1C9 x773701 x29924F x1BAAF2 xB83486 x9D9919 xCB2F2F x581057 x84A349 x177AE0 xCB5A8F x06F38C x943CA5 x1253C5 xCBBE16 xA8774F x9056EC x5C5DE8 x48C5E0 x5CA682 xF3C2BB x365C92 x0CC129 x5BE06B x8D480C x1DC31A xE6AAB9 xBFC7D9 x171ACD x5B7DBA x29399E xB35FC1 xA9CE06 x8D49CD x73BF8D x0060C0 x28520D xE6783B xECE49F xB19217 x4192EE x8AB607 x56E072 x0C6598 x8E933E xD1A6A0 x5FE782 xDD4CEB x40777E x04819F x3E0978 x543388 x7A4A5E x7E85FA xAA1E16 xB9B943 x0BC8C1 xC0DD8B xA1628C xC53CD1 x793CFE xE29640 x0064C5 x3BFC08 xB54ED1 xBCB8D9 xE888D6 x07F4FB x188A1D x65B146 xC1A729 x433B03 x484DEC xB8FE88 x3E5986 x43CF86 xEF77D5 xA2094F x2C9384 x3B17A5 xFC3A5F x8CD97A x77EF94 x59020C x2345D0 x6C9CAE x5EF6EB x4B3D6E x515BA4 x6A488F xDB0704 x0A4A4C x781F7B xDBAC6B xFF4C93 xD81BB8 x1A3E3D xA4445F x8BC7DA xFE4F9F xBEBEFA xBC9D94 }
+			}
+		}
+
+		if = {
+			limit = {
+				exists = c:WIN
+			}
+			s:STATE_WEST_INDIES = {
+				set_owner_of_provinces = {
+					country = c:WIN
+					provinces = { x33895B x9C52CA }
+				}
+			}
+		}
+		else = {
+			create_country = {
+				tag = WIN
+				origin = ROOT
+				state = s:STATE_WEST_INDIES.region_state:GBR
+			}
+		}
+
+		create_country = {
+			tag = JAM
+			origin = c:GBR
+			state = s:STATE_JAMAICA.region_state:GBR
+		}
+
+		create_country = {
+			tag = BAH
+			origin = c:GBR
+			state = s:STATE_BAHAMAS.region_state:GBR
+		}
+
+		s:STATE_GUATEMALA = {
+			set_owner_of_provinces = {
+				country = c:UCA
+				provinces = { xD0B040 x02073E x7D333F }
+			}
+		}
+
+		remove_diplomatic_pact = {
+			country = c:MKT
+			type = protectorate
+		}
+		c:UCA = {
+			annex = c:MKT
+		}
+
+		if = {
+			limit = {
+				exists = c:AMZ
+			}
+			s:STATE_GUAYANA = {
+				set_owner_of_provinces = {
+					country = c:AMZ
+					provinces = { xA22A4C xBB88B5 x218011 x1F5190 x6B802F xA52CE3 xE600F3 xA00111 x734F81 x8E31E8 x7B4B5E x63ABD4 x3A069F x24A66B x719492 x41552E x4AE8F7 x9A88B5 xB21306 xB1960A x805A8C x518580 xC0C0D0 xADE6C2 xE85635 x9FEDF7 xAA1153 x6816FF x350473 xFAE8C5 xB3512B xD0678B xD0BA2B xE7864B xA350D5 x6C6251 }
+				}
+			}
+		}
+		else = {
+			create_country = {
+				tag = AMZ
+				origin = ROOT
+				state = s:STATE_GUAYANA.region_state:GBR
+			}
+		}
+
+		# Africa
+		s:STATE_GHANA = {
+			set_owner_of_provinces = {
+				country = c:ASH
+				provinces = { x8504E6 }
+			}
+		}
+
+		s:STATE_GAMBIA = {
+			set_owner_of_provinces = {
+				country = c:SRR
+				provinces = { xB07040 x7B561C }
+			}
+		}
+		
+		remove_diplomatic_pact = {
+			country = c:SIL
+			type = puppet
+		}
+
+		remove_diplomatic_pact = {
+			country = c:ABU
+			type = protectorate
+		}
+
+		s:STATE_INDIAN_OCEAN_TERRITORY = {
+			set_owner_of_provinces = {
+				country = c:MAD
+				provinces = { xD0E090 x60E0B0 }
+			}
+		}
+
+		# Malta
+		create_country = {
+			tag = MLT
+			origin = c:GBR
+			state = s:STATE_MALTA.region_state:GBR
+		}
+
+		# Gibraltar
+		s:STATE_GRANADA = {
+			set_owner_of_provinces = {
+				country = c:SPA
+				provinces = { xBC6ED3 }
+			}
+		}
+
+		# Ireland
+		create_country = {
+			tag = IRE
+			origin = c:GBR
+			state = s:STATE_LEINSTER.region_state:GBR
+			on_created = {
+				activate_law = law_type:law_parliamentary_republic
+				activate_law = law_type:law_universal_suffrage
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_total_separation
+				activate_law = law_type:law_appointed_bureaucrats
+				activate_law = law_type:law_national_militia
+
+
+				activate_law = law_type:law_public_schools
+
+				set_relations = { country = c:GBR value = 50 }
+			}
+		}
+
+		s:STATE_MUNSTER = {
+			set_owner_of_provinces = {
+				country = c:IRE
+				provinces = { xEF3F71 xE06040 xF53F9B xBDAB32 xA0E0C0 x849939 x02061B xECB3A5 x969279 xD9BB34 }
+			}
+		}
+		s:STATE_CONNAUGHT = {
+			set_owner_of_provinces = {
+				country = c:IRE
+				provinces = { x20E0C0 x641238 xE5C4FE xC7847D xA060C0 x5DEF58 x85F13B x656D90 }
+			}
+		}
+		s:STATE_ULSTER = {
+			set_owner_of_provinces = {
+				country = c:IRE
+				provinces = { x688E79 x0A38AF x2BE1C8 xA06040 xCFCD2B xAA6FA1 x20E040 xA0C0E0 }
+			}
+
+			remove_homeland = cu:scottish
+			remove_homeland = cu:british
+		}
+
+		s:STATE_WALES = {
+			remove_homeland = cu:british
+		}
+		c:GBR = {
+			add_primary_culture = cu:welsh
+		}
+
+		remove_company = company_type:company_hbc
+		remove_company = company_type:company_east_india_company
+	}
+
+	ai_chance = {
+		base = 0
+	}
+}
