@@ -67,6 +67,13 @@ netherlands_decolonize = {
 			country = c:DEI
 			type = dominion
 		}
+		c:DEI = {
+			every_subject_or_below = {
+				c:DEI = {
+					annex = prev
+				}
+			}
+		}
 		create_country = {
 			tag = IDN
 			origin = c:DEI
@@ -84,47 +91,8 @@ netherlands_decolonize = {
 
 				activate_law = law_type:law_slavery_banned
 
-				c:DEI = {
-					remove_diplomatic_pact = {
-						country = c:JMB
-						type = puppet
-					}
-					remove_diplomatic_pact = {
-						country = c:YOG
-						type = puppet
-					}
-					remove_diplomatic_pact = {
-						country = c:SRK
-						type = puppet
-					}
-					remove_diplomatic_pact = {
-						country = c:SMB
-						type = puppet
-					}
-					remove_diplomatic_pact = {
-						country = c:PON
-						type = puppet
-					}
-					remove_diplomatic_pact = {
-						country = c:BNJ
-						type = puppet
-					}
-					remove_diplomatic_pact = {
-						country = c:TID
-						type = puppet
-					}
-				}
+				annex = c:DEI
 
-				c:IDN = {
-					annex = c:JMB
-					annex = c:YOG
-					annex = c:SRK
-					annex = c:SMB
-					annex = c:PON
-					annex = c:BNJ
-					annex = c:TID
-					annex = c:DEI
-				}
 				s:STATE_ACEH = {
 					add_claim = c:IDN
 				}
