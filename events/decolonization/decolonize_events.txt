@@ -1,0 +1,226 @@
+namespace = decolonize_events
+
+decolonize_events.1 = {
+    type = country_event
+    event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    duration = 1
+    cooldown = { days = never_fire_again_modifier_time }
+
+    option = {
+        name = decolonize_events.1.a
+        default_option = yes
+    }
+    option = {
+        name = decolonize_events.1.b
+        play_as = c:ICL
+    }
+    option = {
+        name = decolonize_events.1.c
+        play_as = c:GRN
+    }
+    option = {
+        name = decolonize_events.1.d
+        play_as = c:WIN
+    }
+}
+
+decolonize_events.2 = {
+    type = country_event
+    event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    duration = 1
+    cooldown = { days = never_fire_again_modifier_time }
+
+    option = {
+        name = decolonize_events.2.a
+        default_option = yes
+    }
+    option = {
+        name = decolonize_events.2.b
+        play_as = c:WIN
+    }
+    option = {
+        name = decolonize_events.2.c
+        play_as = c:AMZ
+    }
+}
+
+decolonize_events.3 = {
+    type = country_event
+    event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    duration = 1
+    cooldown = { days = never_fire_again_modifier_time }
+
+    option = {
+        name = decolonize_events.3.a
+        default_option = yes
+    }
+    option = {
+        name = decolonize_events.3.b
+        play_as = c:AMZ
+    }
+    option = {
+        name = decolonize_events.3.c
+        play_as = c:AST
+    }
+    option = {
+        name = decolonize_events.3.d
+        play_as = c:BAH
+    }
+    option = {
+        name = decolonize_events.3.e
+        play_as = c:BHT
+    }
+    option = {
+        name = decolonize_events.3.f
+        play_as = c:CAN
+    }
+    option = {
+        name = decolonize_events.3.g
+        play_as = c:IRE
+    }
+    option = {
+        name = decolonize_events.3.h
+        play_as = c:JAM
+    }
+    option = {
+        name = decolonize_events.3.i
+        play_as = c:MLT
+    }
+    option = {
+        name = decolonize_events.3.j
+        play_as = c:NZL
+    }
+    option = {
+        name = decolonize_events.3.k
+        play_as = c:WIN
+    }
+    
+}
+
+decolonize_events.4 = {
+    type = country_event
+    event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    duration = 1
+    cooldown = { days = never_fire_again_modifier_time }
+
+    option = {
+        name = decolonize_events.4.a
+        default_option = yes
+    }
+    option = {
+        name = decolonize_events.4.b
+        play_as = c:AMZ
+    }
+    option = {
+        name = decolonize_events.4.c
+        play_as = c:IDN
+    }
+    option = {
+        name = decolonize_events.4.d
+        play_as = c:LUX
+    }
+}
+
+decolonize_events.5 = {
+    type = country_event
+    event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    duration = 1
+    cooldown = { days = never_fire_again_modifier_time }
+
+    option = {
+        name = decolonize_events.5.a
+        default_option = yes
+    }
+    option = {
+        name = decolonize_events.5.b
+        play_as = c:ARM
+    }
+    option = {
+        name = decolonize_events.5.c
+        play_as = c:AZB
+    }
+    option = {
+        name = decolonize_events.5.d
+        play_as = c:BYE
+    }
+    option = {
+        name = decolonize_events.5.e
+        play_as = c:CRI
+    }
+    option = {
+        name = decolonize_events.5.f
+        play_as = c:EST
+    }
+    option = {
+        name = decolonize_events.5.g
+        play_as = c:FIN
+    }
+    option = {
+        name = decolonize_events.5.h
+        play_as = c:GEO
+    }
+    option = {
+        name = decolonize_events.5.i
+        play_as = c:LAT
+    }
+    option = {
+        name = decolonize_events.5.j
+        play_as = c:LIT
+    }
+    option = {
+        name = decolonize_events.5.k
+        play_as = c:POL
+    }
+    option = {
+        name = decolonize_events.5.l
+        play_as = c:UKR
+    }
+}
+
+decolonize_events.6 = {
+    type = country_event
+    event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    duration = 1
+    cooldown = { days = never_fire_again_modifier_time }
+
+    option = {
+        name = decolonize_events.6.a
+        default_option = yes
+    }
+    option = {
+        name = decolonize_events.6.b
+        play_as = c:CUB
+    }
+    option = {
+        name = decolonize_events.6.c
+        play_as = c:PCO
+    }
+    option = {
+        name = decolonize_events.6.d
+        play_as = c:PHI
+    }
+}

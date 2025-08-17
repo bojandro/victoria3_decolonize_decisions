@@ -51,6 +51,11 @@ spain_decolonize = {
 			country = c:PHI
 			type = colony
 		}
+
+		trigger_event = {
+			id = decolonize_events.6
+			popup = yes
+		}
 	}
 
 	ai_chance = {

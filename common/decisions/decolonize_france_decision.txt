@@ -112,6 +112,11 @@ france_decolonize = {
 			country = c:PLY
 			type = protectorate
 		}
+
+		trigger_event = {
+			id = decolonize_events.2
+			popup = yes
+		}
 	}
 
 	ai_chance = {

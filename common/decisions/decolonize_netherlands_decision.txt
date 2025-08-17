@@ -131,6 +131,11 @@ netherlands_decolonize = {
 				}
 			}
 		}
+
+		trigger_event = {
+			id = decolonize_events.4
+			popup = yes
+		}
 	}
 
 	ai_chance = {

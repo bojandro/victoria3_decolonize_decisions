@@ -1,0 +1,360 @@
+russia_decolonize = {
+	is_shown = {
+		c:RUS = ROOT
+		game_date < 1836.1.2
+	}
+
+	possible = {
+		always = yes
+	}
+
+	when_taken = {
+		if = {
+			limit = { 
+				NOT = { has_law = law_type:law_no_colonial_affairs }
+			}
+			activate_law = law_type:law_no_colonial_affairs
+		}
+		if = {
+			limit = {
+				NOT = { has_law = law_type:law_slavery_banned }
+			}
+			activate_law = law_type:law_slavery_banned
+		}
+
+		remove_diplomatic_pact = {
+			country = c:ALK
+			type = chartered_company
+		}
+		remove_diplomatic_pact = {
+			country = c:UBD
+			type = puppet
+		}
+		annex = c:UBD
+		remove_diplomatic_pact = {
+			country = c:FIN
+			type = personal_union
+		}
+		c:FIN = {
+			activate_law = law_type:law_parliamentary_republic
+			activate_law = law_type:law_landed_voting
+			activate_law = law_type:law_cultural_exclusion
+			activate_law = law_type:law_freedom_of_conscience
+			activate_law = law_type:law_hereditary_bureaucrats
+			activate_law = law_type:law_tenant_farmers
+		}
+		remove_diplomatic_pact = {
+			country = c:KZH
+			type = protectorate
+		}
+		remove_diplomatic_pact = {
+			country = c:UZH
+			type = protectorate
+		}
+		remove_diplomatic_pact = {
+			country = c:OZH
+			type = protectorate
+		}
+
+		s:STATE_DOBRUDJA = {
+			set_owner_of_provinces = {
+				country = c:TUR
+				provinces = { x50F5CB }
+			}
+		}
+		s:STATE_KARS = {
+			set_owner_of_provinces = {
+				country = c:TUR
+				provinces = { x327755 xC09080 }
+			}
+		}
+
+		s:STATE_URALSK = {
+			set_owner_of_provinces = {
+				country = c:KZH
+				provinces = { x03D970 x09A78F x0A5203 x137A72 x23A192 x287729 x2D27C6 x31BCAB x31D92C x32745E x389F61 x3ADF14 x3DF767 x42F8B1 x448823 x47D771 x54B279 x5A093C x636379 x6C4AFC x702E4A x745238 x77E944 x7A0B02 x818962 x820B82 x84BB74 x85B325 x873F80 x8EC3E4 x944AFB x999C2F xA73E93 xA86F28 xB22244 xB4BA02 xB8A7BC xBEC5B8 xC0703B xC1E0B1 xC2D1FD xCD2E5B xDB32CF xDB54E0 xDCDFB1 xDD121A xDF5085 xEA1BD5 xEF7A45 xF3CFD6 xF55425 xFE5B2A }
+			}
+		}
+		s:STATE_SAMARA = {
+			set_owner_of_provinces = {
+				country = c:RUS
+				provinces = { x1CF34F x21DFA0 x2505DB x28AD29 x2FE543 x340E79 x9F49D5 xDADB41 xE44235 xE9B9FB }
+			}
+		}
+		s:STATE_CHELYABINSK = {
+			set_owner_of_provinces = {
+				country = c:RUS
+				provinces = { x001A4C x25E850 x831CDC x8CFB3E xA59162 xB6D2D8 xC470FD xDFE045 xDFE0A0 x389A65 x45F63E x47EC86 x6453FB x942B77 }
+			}
+		}
+		s:STATE_AKMOLINSK = {
+			set_owner_of_provinces = {
+				country = c:OZH
+				provinces = { x0247E4 x10826C x18C6D4 x269596 x32B0B3 x32DF16 x391054 x41E1DD x46471E x470E92 x48D8BA x4ED6F6 x4F50D7 x550CEC x5A0540 x6218AA x66D355 x67CF5B x69FDFC x6B01A9 x6B4727 x705C49 x782B38 x87A6EF x880372 x880425 x9A571F x9A64D0 xA736F0 xABED3D xAC7D02 xB0BB12 xC47A4C xC790DB xC7DA51 xCEF3B7 xCF86EF xD2D2D7 xD37222 xD44E92 xD74258 xDF3E66 xDF6D72 xE34CC4 xE59BDA xE62636 xF2637F xF39F86 }
+			}
+		}
+
+		create_country = {
+			tag = LIT
+			origin = ROOT
+			state = s:STATE_VILNIUS.region_state:RUS
+			on_created = {
+				activate_law = law_type:law_presidential_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_freedom_of_conscience
+				activate_law = law_type:law_hereditary_bureaucrats
+				activate_law = law_type:law_tenant_farmers
+
+				s:STATE_KAUNAS = {
+					region_state:RUS = {
+						set_state_owner = c:LIT
+						set_state_type = incorporated
+					}
+				}
+				s:STATE_VILNIUS = {
+					remove_homeland = cu:polish
+				}
+			}
+		}
+		create_country = {
+			tag = LAT
+			origin = ROOT
+			state = s:STATE_RIGA.region_state:RUS
+			on_created = {
+				activate_law = law_type:law_parliamentary_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_freedom_of_conscience
+				activate_law = law_type:law_hereditary_bureaucrats
+				activate_law = law_type:law_tenant_farmers
+
+				s:STATE_COURLAND = {
+					region_state:RUS = {
+						set_state_owner = c:LAT
+						set_state_type = incorporated
+					}
+				}
+			}
+		}
+		create_country = {
+			tag = EST
+			origin = ROOT
+			state = s:STATE_TALINN.region_state:RUS
+			on_created = {
+				activate_law = law_type:law_parliamentary_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_freedom_of_conscience
+				activate_law = law_type:law_hereditary_bureaucrats
+				activate_law = law_type:law_tenant_farmers
+
+				s:STATE_TARTU = {
+					region_state:RUS = {
+						set_state_owner = c:EST
+						set_state_type = incorporated
+					}
+				}
+			}
+		}
+		create_country = {
+			tag = POL
+			origin = root
+			state = s:STATE_GREATER_POLAND.region_state:RUS
+			on_created = {
+				activate_law = law_type:law_presidential_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_freedom_of_conscience
+				activate_law = law_type:law_hereditary_bureaucrats
+				activate_law = law_type:law_tenant_farmers
+
+				s:STATE_LESSER_POLAND = {
+					region_state:RUS = {
+						set_state_owner = c:POL
+						set_state_type = incorporated
+					}
+				}
+				s:STATE_MAZOVIA = {
+					region_state:RUS = {
+						set_state_owner = c:POL
+						set_state_type = incorporated
+					}
+				}
+			}
+		}
+		create_country = {
+			tag = UKR
+			origin = root
+			state = s:STATE_KIEV.region_state:RUS
+			on_created = {
+				activate_law = law_type:law_presidential_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_freedom_of_conscience
+				activate_law = law_type:law_hereditary_bureaucrats
+				activate_law = law_type:law_tenant_farmers
+
+				s:STATE_CHERNIHIV = {
+					region_state:RUS = {
+						set_state_owner = c:UKR
+						set_state_type = incorporated
+					}
+					remove_homeland = cu:russian
+				}
+				s:STATE_KHARKOV = {
+					region_state:RUS = {
+						set_state_owner = c:UKR
+						set_state_type = incorporated
+					}
+					remove_homeland = cu:russian
+				}
+				s:STATE_TAURIDA = {
+					region_state:RUS = {
+						set_state_owner = c:UKR
+						set_state_type = incorporated
+					}
+					remove_homeland = cu:russian
+				}
+				s:STATE_CHERSON.region_state:RUS = {
+					set_state_owner = c:UKR
+					set_state_type = incorporated
+				}
+				s:STATE_VOLHYNIA = {
+					region_state:RUS = {
+						set_state_owner = c:UKR
+						set_state_type = incorporated
+					}
+				}
+				s:STATE_BESSARABIA = {
+					region_state:RUS = {
+						set_state_owner = c:MOL
+						set_state_type = incorporated
+					}
+				}
+			}
+		}
+		create_country = {
+			tag = CRI
+			origin = root
+			state = s:STATE_CRIMEA.region_state:RUS
+			on_created = {
+				activate_law = law_type:law_presidential_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_freedom_of_conscience
+				activate_law = law_type:law_hereditary_bureaucrats
+				activate_law = law_type:law_tenant_farmers
+				s:STATE_CRIMEA = {
+					remove_homeland = cu:russian
+					remove_homeland = cu:ukrainian
+				}
+				c:UKR ?= {
+					create_diplomatic_pact = {
+						country = c:CRI
+						type = puppet
+					}
+					create_diplomatic_pact = {
+						country = c:CRI
+						type = decrease_payments
+					}
+				}
+			}
+		}
+		create_country = {
+			tag = BYE
+			origin = root
+			state = s:STATE_MINSK.region_state:RUS
+			on_created = {
+				activate_law = law_type:law_presidential_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_freedom_of_conscience
+				activate_law = law_type:law_hereditary_bureaucrats
+				activate_law = law_type:law_tenant_farmers
+
+				s:STATE_MINSK = {
+					remove_homeland = cu:russian
+				}
+				s:STATE_BREST = {
+					region_state:RUS = {
+						set_state_owner = c:BYE
+						set_state_type = incorporated
+					}
+					remove_homeland = cu:russian
+				}
+				s:STATE_VITEBSK = {
+					region_state:RUS = {
+						set_state_owner = c:BYE
+						set_state_type = incorporated
+					}
+					remove_homeland = cu:russian
+				}
+				s:STATE_MOGILEV = {
+					region_state:RUS = {
+						set_state_owner = c:BYE
+						set_state_type = incorporated
+					}
+					remove_homeland = cu:russian
+				}
+			}
+		}
+
+		create_country = {
+			tag = GEO
+			origin = root
+			state = s:STATE_GREATER_CAUCASUS.region_state:RUS
+			on_created = {
+				activate_law = law_type:law_parliamentary_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_freedom_of_conscience
+				activate_law = law_type:law_hereditary_bureaucrats
+				activate_law = law_type:law_tenant_farmers
+			}
+		}
+		create_country = {
+			tag = AZB
+			origin = root
+			state = s:STATE_AZERBAIJAN.region_state:RUS
+			on_created = {
+				activate_law = law_type:law_presidential_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_freedom_of_conscience
+				activate_law = law_type:law_hereditary_bureaucrats
+				activate_law = law_type:law_tenant_farmers
+
+				s:STATE_ELIZAVETPOL = {
+					region_state:RUS = {
+						set_state_owner = c:AZB
+						set_state_type = incorporated
+					}
+				}
+			}
+		}
+		create_country = {
+			tag = ARM
+			origin = root
+			state = s:STATE_ARMENIA.region_state:RUS
+			on_created = {
+				activate_law = law_type:law_parliamentary_republic
+				activate_law = law_type:law_landed_voting
+				activate_law = law_type:law_cultural_exclusion
+				activate_law = law_type:law_freedom_of_conscience
+				activate_law = law_type:law_hereditary_bureaucrats
+				activate_law = law_type:law_tenant_farmers
+			}
+		}
+		remove_company = company_type:company_russian_american_company
+
+		trigger_event = {
+			id = decolonize_events.5
+			popup = yes
+		}
+	}
+
+	ai_chance = {
+		base = 0
+	}
+}

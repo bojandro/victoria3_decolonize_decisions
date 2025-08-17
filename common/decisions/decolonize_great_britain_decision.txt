@@ -1,4 +1,4 @@
-britain_decolonize = {
+great_britain_decolonize = {
 	is_shown = {
 		c:GBR = ROOT
 		game_date < 1836.1.2
@@ -404,6 +404,11 @@ britain_decolonize = {
 
 		remove_company = company_type:company_hbc
 		remove_company = company_type:company_east_india_company
+
+		trigger_event = {
+			id = decolonize_events.3
+			popup = yes
+		}
 	}
 
 	ai_chance = {

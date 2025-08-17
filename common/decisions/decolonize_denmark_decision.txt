@@ -91,6 +91,11 @@ denmark_decolonize = {
 				state = s:STATE_WEST_INDIES.region_state:DEN
 			}
 		}
+
+		trigger_event = {
+			id = decolonize_events.1
+			popup = yes
+		}
 	}
 
 	ai_chance = {
