@@ -34,6 +34,24 @@ netherlands_decolonize = {
 			type = personal_union
 		}
 
+		if = {
+			limit = {
+				exists = c:WIN
+			}
+			s:STATE_WEST_INDIES = {
+				set_owner_of_provinces = {
+					country = c:WIN
+					provinces = { xB03080 xECC061 x1D9B6B }
+				}
+			}
+		}
+		else = {
+			create_country = {
+				tag = WIN
+				origin = ROOT
+				state = s:STATE_WEST_INDIES.region_state:NET
+			}
+		}
 		create_country = {
 			tag = AMZ
 			origin = ROOT
@@ -57,7 +75,7 @@ netherlands_decolonize = {
 				state = s:STATE_WEST_INDIES.region_state:DEN
 			}
 		}
-		s:STATE_GHANA = {
+		s:STATE_GOLD_COAST = {
 			set_owner_of_provinces = {
 				country = c:ASH
 				provinces = { x6C8064 }

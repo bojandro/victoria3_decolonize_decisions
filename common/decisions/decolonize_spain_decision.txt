@@ -31,20 +31,13 @@ spain_decolonize = {
 				provinces = { xCA9F75 xA0B0C0 }
 			}
 		}
-		s:STATE_SOUTH_CAMEROON = {
-			set_owner_of_provinces = {
-				country = c:DLA
-				provinces = { x902089 }
-			}
-		}
-		create_country = {
-			tag = PCO
-			origin = ROOT
-			state = s:STATE_PUERTO_RICO.region_state:SPA
-		}
 
 		remove_diplomatic_pact = {
 			country = c:CUB
+			type = colony
+		}
+		remove_diplomatic_pact = {
+			country = c:PCO
 			type = colony
 		}
 		remove_diplomatic_pact = {

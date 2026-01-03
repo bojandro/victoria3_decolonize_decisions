@@ -307,14 +307,28 @@ great_britain_decolonize = {
 		}
 
 		# Africa
-		s:STATE_GHANA = {
+		s:STATE_GOLD_COAST = {
 			set_owner_of_provinces = {
 				country = c:ASH
 				provinces = { x8504E6 }
 			}
 		}
 
-		s:STATE_GAMBIA = {
+		s:STATE_SIERRA_LEONE = {
+			set_owner_of_provinces = {
+				country = c:TMN
+				provinces = { x6216D1 }
+			}
+		}
+
+		s:STATE_SOUTH_CAMEROON = {
+			set_owner_of_provinces = {
+				country = c:DLA
+				provinces = { x902089 }
+			}
+		}
+		
+		s:STATE_SENEGAL = {
 			set_owner_of_provinces = {
 				country = c:SRR
 				provinces = { xB07040 x7B561C }
@@ -323,7 +337,7 @@ great_britain_decolonize = {
 		
 		remove_diplomatic_pact = {
 			country = c:SIL
-			type = puppet
+			type = colony
 		}
 
 		remove_diplomatic_pact = {

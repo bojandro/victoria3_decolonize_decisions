@@ -34,7 +34,7 @@ denmark_decolonize = {
 			type = personal_union
 		}
 
-		s:STATE_TOGO = {
+		s:STATE_GOLD_COAST = {
 			set_owner_of_provinces = {
 				country = c:ASH
 				provinces = { x802111 }

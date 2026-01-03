@@ -135,6 +135,10 @@ decolonize_events.4 = {
         name = decolonize_events.4.d
         play_as = c:LUX
     }
+    option = {
+        name = decolonize_events.4.e
+        play_as = c:WIN
+    }
 }
 
 decolonize_events.5 = {

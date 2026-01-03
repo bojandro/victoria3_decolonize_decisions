@@ -28,8 +28,9 @@
  decolonize_events.4.b:0 "Amazonia"
  decolonize_events.4.c:0 "Indonesia"
  decolonize_events.4.d:0 "Luxembourg"
+ decolonize_events.4.e:0 "West Indies"
 
- protugal_decolonize:0 "Decolonization of Portugal"
+ portugal_decolonize:0 "Decolonization of Portugal"
 
  russia_decolonize:0 "Decolonization of Russia"
  decolonize_events.5.a:0 "I'm good"
