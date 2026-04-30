@@ -223,7 +223,27 @@ great_britain_decolonize = {
 				activate_law = law_type:law_public_schools
 
 				set_relations = { country = c:GBR value = 50 }
-				set_relations = { country = c:USA value = 50 }
+				set_relations = { country = c:USA value = 20 }
+			}
+		}
+		s:STATE_IDAHO = {
+			set_owner_of_provinces = {
+				country = c:USA
+				provinces = { x4B49F2 xE836AA xB94979 x2BCA5E x0667C7 x7B7595 }
+			}
+			remove_claim = c:ORG
+			add_claim = c:USA
+		}
+		s:STATE_OREGON = {
+			set_owner_of_provinces = {
+				country = c:USA
+				provinces = { xBB67BF xECB422 x516EE9 x9A8FE0 x7F6C55 xB44E52 x6C865B x9D6DC4 x45A1A9 xD83E52 xCBB471 x293CFE x39BBAC xAA3291 x2743B8 xF62E1E x06ADC6 xA0E237 xA9C13D x87ED27 xD87AC6 x4A00D8 x637BED xD618E3 xF35EB7 xC1118F xF22299 x25F09F x80A000 x111E67 xEE8DD8 x4960BF x37E740 xEEE2DF xEB2D7C x0CE459 x9B28DC x0F1D3D xA22631 xBDE344 xFB0F43 xCD9293 xA87938 xA0C0C0 xC8AC77 x75F5D2 x25B61A x0419A4 x4E26DC xC305C5 x7A125A x70746B xBC98A3 x1F5423 xE1EAB1 x508345 xFE0977 x9057FD xF5AD68 x2F14A9 x6976E3 xF72662 x5E6688 x404E40 xD8F5D7 xDEC345 x103F17 x500A3C xD4E859 x399A20 xA0ECEC xA30109 x3A1A26 x42EA1A xE0E0E0 x7E3484 x17732C xFAEFD3 }
+			}
+		}
+		s:STATE_WASHINGTON = {
+			set_owner_of_provinces = {
+				country = c:USA
+				provinces = { x052300 xAC33A4 xFC0388 xD31024 x7147A2 x3E4D28 xCF4646 x3A17A7 x639A2C x2FEE4D x8CF087 x896ABB x085961 x4F0C2D xD61B40 xC0F8C2 xC8CBF4 x9E03D5 x0187D7 x00A000 xA4DD56 x551707 x872665 x2CE4D9 xCD3BA9 x0A48BB xD96A8E xDAC21E xF4C54B x3F0EE7 x20C0C0 x74558E x940588 x266DDD x036981 xC77F08 xB4D972 x5637A4 x3575A8 x30DED0 x64DA01 x6845FD x6AA85B xA040C0 x3CB52E x553AEE x2BF430 x496526 x9AA5A8 x5DFA9B xDCF81F xA92FD8 x38322E xB5A331 x68129D xFFBEF7 xBBBE62 x227733 x004935 x0D9D1A }
 			}
 		}
 		c:CAN = {
@@ -360,7 +380,7 @@ great_britain_decolonize = {
 		}
 
 		# Gibraltar
-		s:STATE_GRANADA = {
+		s:STATE_UPPER_ANDALUSIA = {
 			set_owner_of_provinces = {
 				country = c:SPA
 				provinces = { xBC6ED3 }

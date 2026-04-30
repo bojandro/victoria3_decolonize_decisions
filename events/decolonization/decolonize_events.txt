@@ -105,8 +105,7 @@ decolonize_events.3 = {
     option = {
         name = decolonize_events.3.k
         play_as = c:WIN
-    }
-    
+    }   
 }
 
 decolonize_events.4 = {
@@ -226,5 +225,65 @@ decolonize_events.6 = {
     option = {
         name = decolonize_events.6.d
         play_as = c:PHI
+    }
+}
+
+decolonize_events.7 = {
+    type = country_event
+    event_image = {
+		video = "europenorthamerica_capitalists_meeting"
+	}
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    duration = 1
+    cooldown = { days = never_fire_again_modifier_time }
+
+    option = {
+        name = decolonize_events.7.a
+        default_option = yes
+    }
+    option = {
+        name = decolonize_events.7.b
+        play_as = c:ALB
+    }
+    option = {
+        name = decolonize_events.7.c
+        play_as = c:BOS
+    }
+    option = {
+        name = decolonize_events.7.d
+        play_as = c:EGY
+    }
+    option = {
+        name = decolonize_events.7.e
+        play_as = c:GRE
+    }
+    option = {
+        name = decolonize_events.7.f
+        play_as = c:IRQ
+    }
+    option = {
+        name = decolonize_events.7.g
+        play_as = c:KUR
+    }
+    option = {
+        name = decolonize_events.7.h
+        play_as = c:MOL
+    }
+    option = {
+        name = decolonize_events.7.i
+        play_as = c:MON
+    }
+    option = {
+        name = decolonize_events.7.j
+        play_as = c:SER
+    }
+    option = {
+        name = decolonize_events.7.k
+        play_as = c:SYR
+    }
+    option = {
+        name = decolonize_events.7.l
+        play_as = c:WAL
     }
 }
