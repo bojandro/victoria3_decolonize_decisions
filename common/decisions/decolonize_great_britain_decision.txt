@@ -429,6 +429,21 @@ great_britain_decolonize = {
 			remove_homeland = cu:british
 		}
 
+		s:STATE_MALAYA = {
+			set_owner_of_provinces = {
+				country = c:PRK
+				provinces = { x08673B }
+			}
+			set_owner_of_provinces = {
+				country = c:SEL
+				provinces = { x8080B0 }
+			}
+			set_owner_of_provinces = {
+				country = c:JOH
+				provinces = { xC00130 }
+			}
+		}
+
 		s:STATE_WALES = {
 			remove_homeland = cu:british
 		}
